@@ -22,7 +22,7 @@ async def run():
     # Remove debug prints
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(read, write) as session:
-            prompt = f"Find Flights from Atlanta to Las Vegas 2025-05-05"
+            prompt = f"Find Flights from Atlanta to Las Vegas 2025-08-01"
             await session.initialize()
             # Remove debug prints
 
@@ -47,7 +47,7 @@ async def run():
             # Remove debug prints
 
             response = client.models.generate_content(
-                model="gemini-2.5-pro-exp-03-25",
+                model="gemini-2.5-pro",
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     temperature=0,
